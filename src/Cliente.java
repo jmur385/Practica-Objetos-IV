@@ -67,6 +67,19 @@ public abstract class Cliente {
         return sb.toString();
     }
 
+    /**
+     * Se usa para saber el tipo de
+     * suscripción que tiene el cliente
+     * @return true si el cliente es pro y false si no
+     */
+
     public abstract boolean esPro();
+
+    /**
+     * Se usa para saber el precio
+     * que paga el cliente
+     * @return 5.0 si pro, 3.0 si no
+     */
+
     public abstract double getPrecioMensual();
 }

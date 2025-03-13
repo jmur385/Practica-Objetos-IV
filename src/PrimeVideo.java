@@ -12,12 +12,17 @@ public class PrimeVideo {
         this.ganancias = 0.0;
     }
 
+    public ArrayList<Cliente> getSuscriptores() {
+        return suscriptores;
+    }
+
     public ArrayList<Multimedia> getCatalogo() {
         return catalogo;
     }
 
     /**
-     *
+     * Añade un suscriptor a la lista
+     * @param c Cliente
      */
 
     public void addSuscriptor(Cliente c) {
@@ -28,6 +33,11 @@ public class PrimeVideo {
         }
     }
 
+    /**
+     * Añade una serie/película al catálogo
+     * @param m Multimedia
+     */
+
     public void addMultimedia(Multimedia m) {
         int posicion = this.catalogo.indexOf(m);
 
@@ -36,11 +46,28 @@ public class PrimeVideo {
         }
     }
 
+    /**
+     * Suma el precio de la serie/película
+     * a las ganancias totales
+     * @param m Multimedia
+     * @param c Cliente
+     */
+
     public void ver(Multimedia m, Cliente c){
         if (!c.esPro()){
             this.ganancias += m.getPrecio();
         }
     }
+
+    /**
+     * Suma para conseguir cuanto
+     * dinero se ha conseguido en un año
+     *
+     * @return total de ganancias entre
+     * las suscripciones y las series/películas
+     *
+     * (pagas por cada serie y por una suscripción?? Menuda estafa...)
+     */
 
     public Double getGanancias() {
         double gananciasSucriptores = 0.0;
